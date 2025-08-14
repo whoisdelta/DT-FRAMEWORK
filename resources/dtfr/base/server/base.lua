@@ -182,7 +182,7 @@ AddEventHandler('playerConnecting', function(playerName, setKickReason, deferral
 
     deferrals.update('Verificam daca esti banat...');
 
-    local decodedData = json.decode(userData.userData);
+    local decodedData = type(userData.userData) == 'string' and json.decode(userData.userData) or userData.userData;
     if decodedData and decodedData.ban_data then
         deferrals.done(dFR.User:banMsg(decodedData.ban_data.reason, decodedData.ban_data.banned_by));
         return;
