@@ -334,7 +334,7 @@ AddEventHandler('onResourceStart', function(resource)
 
         for k, v in pairs(GetPlayers()) do
             Wait(100);
-            initPlayer(k);
+            initPlayer(v);
         end
     end
 end)
